@@ -1,0 +1,42 @@
+[
+    {
+        "task": "Create a storage bucket in the asia region",
+        "command": "gcloud storage buckets create gs://assigment1-bucket-04052025 --location=ASIA",
+        "terminal_output": "Creating gs://assigment1-bucket-04052025/..."
+    },
+    {
+        "task": "List all storage buckets",
+        "command": "gcloud storage buckets list",
+        "terminal_output": "acl:- entity: project-owners-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: owners\n  role: OWNER\n- entity: project-editors-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: editors\n  role: OWNER\n- entity: project-viewers-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: viewers\n  role: READER\ncreation_time: 2025-05-04T09:07:16+0000\ndefault_acl:\n- entity: project-owners-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: owners\n  role: OWNER\n- entity: project-editors-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: editors\n  role: OWNER\n- entity: project-viewers-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: viewers\n  role: READER\ndefault_storage_class: STANDARD\ngeneration: 1746349636574446998\nlocation: ASIA\nlocation_type: multi-region\nmetageneration: 1\nname: assigment1-bucket-04052025\npublic_access_prevention: inherited\nrpo: DEFAULT\nsoft_delete_policy:\n  effectiveTime: '2025-05-04T09:07:16.909000+00:00'\n  retentionDurationSeconds: '604800'\nstorage_url: gs://assigment1-bucket-04052025/\nuniform_bucket_level_access: false\nupdate_time: 2025-05-04T09:07:16+0000\n---\nacl:\n- entity: project-owners-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: owners\n  role: OWNER\n- entity: project-editors-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: editors\n  role: OWNER\n- entity: project-viewers-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: viewers\n  role: READER\ncreation_time: 2025-05-03T13:38:51+0000\ndefault_acl:\n- entity: project-owners-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: owners\n  role: OWNER\n- entity: project-editors-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: editors\n  role: OWNER\n- entity: project-viewers-542201245954\n  projectTeam:\n    projectNumber: '542201245954'\n    team: viewers\n  role: READER\ndefault_storage_class: STANDARD\ngeneration: 1746279529865613198\nlocation: ASIA\nlocation_type: multi-region\nmetageneration: 1\nname: test-gotherwal-03052025\npublic_access_prevention: inherited\nrpo: DEFAULT\nsoft_delete_policy:\n  effectiveTime: '2025-05-03T13:38:51.630000+00:00'\n  retentionDurationSeconds: '604800'\nstorage_url: gs://test-gotherwal-03052025/\nuniform_bucket_level_access: false\nupdate_time: 2025-05-03T13:38:51+0000"
+    },
+    {
+        "task": "Upload a file to a bucket",
+        "command": "gcloud storage cp profile.png gs://assigment1-bucket-04052025",
+        "terminal_output": "Copying file://profile.png to gs://assigment1-bucket-04052025/profile.pngCompleted files 1/1 | 81.7kiB/81.7kiB"
+    },
+    {
+        "task": "Download a file from a bucket",
+        "command": "gcloud storage cp gs://assigment1-bucket-04052025/hare_lynx.png hare_lynx_download.png",
+        "terminal_output": "Copying gs://assigment1-bucket-04052025/hare_lynx.png to file://hare_lynx_download.png Completed files 1/1 | 106.9kiB/106.9kiB"
+    },
+    {
+        "task": "Move a file from one bucket to another",
+        "command": "gcloud storage mv gs://assigment1-bucket-04052025/profile.png gs://test-gotherwal-03052025/profile_transfer.png",
+        "terminal_output": "Copying gs://assigment1-bucket-04052025/profile.png to gs://test-gotherwal-03052025/profile_transfer.png working..Removing gs://assigment1-bucket-04052025/profile.png...  Completed files 2/1 | 81.7kiB/81.7kiB"
+    },
+    {
+        "task": "Delete a file from a bucket",
+        "command": " gcloud storage rm gs://assigment1-bucket-04052025/hare_lynx.png",
+        "terminal_output": "Removing objects: working.Removing gs://assigment1-bucket-04052025/hare_lynx.png...    Completed 1/1"
+    },
+    {
+        "task": "Delete an empty bucket",
+        "command": " gcloud storage buckets delete gs://assigment1-bucket-04052025",
+        "terminal_output": "working.Removing gs://assigment1-bucket-04052025/...   Completed 1/1"
+    },
+    {
+        "task": "Delete a non-empty bucket",
+        "command": "gcloud storage rm -r gs://test-gotherwal-03052025",
+        "terminal_output": "Removing objects: working.Removing gs://test-gotherwal-03052025/profile_transfer.png#1746351254705502...  Completed 1/1 Removing buckets: working.Removing gs://test-gotherwal-03052025/...   Completed 1/1"
+    }
+]
